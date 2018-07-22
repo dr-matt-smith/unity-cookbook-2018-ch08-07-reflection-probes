@@ -1,28 +1,33 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 /* ----------------------------------------
  * class to demonstrate how to update Reflection Probes 
  * via scripting
  */ 
-public class UpdateProbe : MonoBehaviour {
-	// Provate variable for the ReflectionProbe component of the object this script is attached to
+public class UpdateProbe : MonoBehaviour 
+{
+	// reference to ReflectionProbe component 
 	private ReflectionProbe probe;
+
 	/* ----------------------------------------
 	 * At Awake, assign ReflectionProbe component to 
 	 * probe' variable and update cubemap
 	 */
-	void Awake () {
-		// Assign assign ReflectionProbe component to 'probe' variable
+	void Awake () 
+	{
+		// cache reference to ReflectionProbe component
 		probe = GetComponent<ReflectionProbe> ();
-		// Use RenderProbe function to update reflection cubemap
-		probe.RenderProbe();
+		
+		// refresh reflection cubemap
+		RefreshProbe();
 	}
 
 	/* ----------------------------------------
-	 * A RefreshProbe function to update the cubemap
-	 * whenever this function is called
+	 * update the reflection cubemap
+	 * - public to can be invoked from another scripted object ...
 	 */
-	public void RefreshProbe(){
+	public void RefreshProbe()
+	{
 		// Use RenderProbe function to update reflection cubemap
 		probe.RenderProbe();
 	}
