@@ -1,1 +1,1 @@
-# unity-cookbook-2018-ch07-07-reflection-probes
+# unity-cookbook-2018-ch08-07-reflection-probes
